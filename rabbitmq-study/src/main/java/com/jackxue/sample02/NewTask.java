@@ -19,7 +19,6 @@ public class NewTask {
         for(int i=0; i<60; i++) {
             String message = i + ":new task!";
             channel.basicPublish("", queueName, MessageProperties.PERSISTENT_TEXT_PLAIN, message.getBytes());
-//            TimeUnit.SECONDS.sleep(1);
         }
 
         RabbitMqUtils.close(channel, connection);
